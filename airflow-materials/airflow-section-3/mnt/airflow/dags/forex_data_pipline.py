@@ -16,4 +16,6 @@ with DAG(dag_id="forex_data_pipeline",
 schedule_interval="@daily",
 default_args=default_args,
 catchup=False,
-) as dag:None
+) as dag:
+
+is_foreex

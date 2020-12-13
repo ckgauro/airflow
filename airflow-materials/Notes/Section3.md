@@ -38,12 +38,16 @@ forex_data_pipeline_v_2.py
 ./start.sh
 
 localhost:8080
-    click>admin>
+    click>admin>connection
+        Conn ID: forex_api
+        Conn Type : Http
+        Host : http://api.exchangeratesapi.io/
+        >Then click save
+
 
 docker exec -it <containerID> /bin/bash
 
 airflow test forex_data_pipeling is_forex_Rates_available 2012-12-10 
-
 
 -------    
 
