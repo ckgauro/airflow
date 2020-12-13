@@ -54,6 +54,20 @@ airflow test forex_data_pipeline is_forex_rates_available 2020-12-10
 
 ### Lect 22 FileSensor 
 File sensor 
+localhost:8080
+    Click on Admin>connections>create
+        Conn ID: forex_path
+        Conn Type : file(path)
+        Extra: {"path":"/usr/local/airflow/dags/files"}
+        >Then click save
+
+forex_data_pipeline_v_3.py
 
 
 
+docker exec -it bdea4253f6c2 /bin/bash
+$airflow test forex_data_pipeline is_forex_currencies_file_available 2020-12-10
+
+-------    
+
+### Lect 22 FileSensor 

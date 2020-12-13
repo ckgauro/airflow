@@ -1,5 +1,6 @@
 from airflow import DAG
 from airflow.sensors.http_sensor import HttpSensor
+from airflow.contrib.sensors.file_sensor import FileSensor
 from datetime import datetime, timedelta
 
 default_args = {
@@ -24,3 +25,11 @@ with DAG(dag_id="forex_data_pipeline", schedule_interval="@daily", default_args=
         poke_interval=5,
         timeout=20
     )
+
+    is_forex_currencies_file_available=FileSensor(
+        task_id="is_forex_currencies_file_available",
+        fs_conn_id="forex_path",
+        filepath="forex_currencies.csv",
+        poke_interval=5,
+        timeout=20
+    )    
