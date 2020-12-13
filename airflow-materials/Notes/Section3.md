@@ -24,7 +24,7 @@ Ongoing
 ##### What is an Operator?
 
 
-### Lect 21
+### Lect 21 HTTP sensor
 http://exchangeratesapi.io/
 
 https://api.exchangeratesapi.io/latest?base=USD
@@ -51,6 +51,8 @@ airflow test forex_data_pipeling is_forex_Rates_available 2012-12-10
 
 -------    
 
-### Lect 22
+### Lect 22 FileSensor 
+File sensor 
+
 
 
