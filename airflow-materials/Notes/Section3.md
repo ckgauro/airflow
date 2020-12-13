@@ -47,8 +47,9 @@ localhost:8080
 
 docker exec -it <containerID> /bin/bash
 
-airflow test forex_data_pipeling is_forex_Rates_available 2012-12-10 
+airflow test forex_data_pipeline is_forex_Rates_available 2012-12-10 
 
+airflow test forex_data_pipeline is_forex_rates_available 2020-12-10
 -------    
 
 ### Lect 22 FileSensor 
