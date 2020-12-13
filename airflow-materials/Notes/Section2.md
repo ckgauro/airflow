@@ -71,26 +71,34 @@ Lect 13
 
 #### Controlling your DAGs with the CLI
 
-```
+
 
 * Give the list of known dags (either those in the examples folder or in dags folder)
-airflow list_dags
+``` airflow list_dags ```
 
 * Display the files/folders of the current directory 
+```
 ls
 ls /usr/local/lib/python3.8/site-packages/airflow/example_dags
 localhost:8080 
     click tutorial>Details
         Select filtepath
+```
 
-
-
-airflow trigger_dag example_python_operator
 * Trigger the dag example_python_operator with the current date as execution date
+```
+airflow trigger_dag example_python_operator
+$ airflow trigger_dag example_branch_operator
+[2020-12-12 14:12:26,742] {__init__.py:50} INFO - Using executor SequentialExecutor
+[2020-12-12 14:12:26,742] {dagbag.py:417} INFO - Filling up the DagBag from /usr/local/lib/python3.8/site-packages/airflow/example_dags/example_branch_operator.py
+Created <DagRun example_branch_operator @ 2020-12-12 14:12:26+00:00: manual__2020-12-12T14:12:26+00:00, externally triggered: True>
 
 
-airflow trigger_dag example_python_operator -e 2015-03-02
+```
+
 * Trigger the dag example_python_operator with a date in the past as execution date (This won’t trigger the tasks of that dag unless you set the option catchup=True in the DAG definition)
+airflow trigger_dag example_python_operator -e 2015-03-02
+
 
 
 airflow trigger_dag example_python_operator -e '2019-07-08 19:04:00+00:00'
